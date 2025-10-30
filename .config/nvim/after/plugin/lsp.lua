@@ -10,8 +10,28 @@ lsp.ensure_installed({
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 
+lsp.ensure_installed({
+    "html",
+})
 
-local cmp = require('cmp')
+lsp.configure("html", {
+    filetypes = {"html", "htmldjango"},
+    capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+})
+
+vim.cmd([[
+    autocmd BufNewFile,BufRead *.html setlocal filetype=htmldjango
+]])
+
+local cmp = require("cmp")
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+        end,
+    }
+})
+
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),

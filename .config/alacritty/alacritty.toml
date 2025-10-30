@@ -29,7 +29,7 @@ foreground = "0xf8f8f2"
 TERM = "xterm-256color"
 
 [font]
-size = 10.0
+size = 12.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -274,7 +274,7 @@ mouse = "Middle"
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [window]
-opacity = 0.8
+opacity = 1
 
 [window.padding]
 x = 10
