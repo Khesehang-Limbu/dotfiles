@@ -51,31 +51,21 @@ return require('packer').startup(
         use("tpope/vim-fugitive")
         use("nvim-treesitter/nvim-treesitter-context");
 
-        use {
-            'VonHeikemen/lsp-zero.nvim',
-            branch = 'v1.x',
-            requires = {
-                -- LSP Support
-                { 'neovim/nvim-lspconfig' },
-                { 'williamboman/mason.nvim' },
-                { 'williamboman/mason-lspconfig.nvim' },
-
-                -- Autocompletion
-                { 'hrsh7th/nvim-cmp' },
-                { 'hrsh7th/cmp-buffer' },
-                { 'hrsh7th/cmp-path' },
-                { 'saadparwaiz1/cmp_luasnip' },
-                { 'hrsh7th/cmp-nvim-lsp' },
-                { 'hrsh7th/cmp-nvim-lua' },
-
-                -- Snippets
-                { 'L3MON4D3/LuaSnip',                 run = "make install_jsregexp" },
-                { 'rafamadriz/friendly-snippets' },
-            }
+        use('williamboman/mason.nvim')
+        use('neovim/nvim-lspconfig')
+        use('williamboman/mason-lspconfig.nvim')
+        use('hrsh7th/nvim-cmp')
+        use('hrsh7th/cmp-buffer')
+        use('hrsh7th/cmp-path')
+        use('saadparwaiz1/cmp_luasnip')
+        use('hrsh7th/cmp-nvim-lsp')
+        use('hrsh7th/cmp-nvim-lua')
+        use{'L3MON4D3/LuaSnip',
+            run = 'make install_jsregexp'
         }
+        use('rafamadriz/friendly-snippets')
 
         use("folke/zen-mode.nvim")
-        use("github/copilot.vim")
         use("eandrju/cellular-automaton.nvim")
         use("laytan/cloak.nvim")
 
