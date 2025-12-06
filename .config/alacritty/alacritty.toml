@@ -274,7 +274,7 @@ mouse = "Middle"
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [window]
-opacity = 0.5
+opacity = 0.9
 
 [window.padding]
 x = 10

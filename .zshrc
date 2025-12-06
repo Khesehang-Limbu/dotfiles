@@ -114,9 +114,13 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Pyenv Config
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
-export PATH=/home/evil/.pyenv/shims:/home/evil/.pyenv/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:%HOME/go/bin:/home/evil/go/bin
+export PATH=/home/evil-hypr/.pyenv/shims:/home/evil-hypr/.pyenv/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:%HOME/go/bin:/home/evil-hypr/go/bin:%HOME/.local/bin/calude
 source /usr/share/nvm/init-nvm.sh
+
+export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+export WAYLAND_DISPLAY="wayland-1"
+export GDK_BACKEND=wayland
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
