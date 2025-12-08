@@ -1,1 +1,2 @@
-require("evil")
+require("config")
+require("config.lazy")

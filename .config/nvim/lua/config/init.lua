@@ -1,8 +1,8 @@
-require("evil.set")
-require("evil.remap")
-require("evil.packer")
+require("config.set")
+require("config.remap")
 
 local augroup = vim.api.nvim_create_augroup
+
 local evilGroup = augroup('evil', {})
 
 local autocmd = vim.api.nvim_create_autocmd
