@@ -16,7 +16,7 @@
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Pyenv Config
-export PATH=/home/evil-hypr/.pyenv/shims:/home/evil-hypr/.pyenv/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:%HOME/go/bin:/home/evil-hypr/go/bin:%HOME/.local/bin/calude
+export PATH=/home/evil/.pyenv/shims:/home/evil/.pyenv/bin:/home/evil/.asdf/installs/php/8.5.2/.composer/vendor/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/evil/go/bin:/home/evil-hypr/go/bin:/home/evil/.local/bin/calude
 source /usr/share/nvm/init-nvm.sh
 
 export XDG_RUNTIME_DIR="/run/user/$(id -u)"
@@ -24,6 +24,7 @@ export WAYLAND_DISPLAY="wayland-0"
 export GDK_BACKEND=wayland
 
 export PYENV_ROOT="$HOME/.pyenv"
+export PHPENV_ROOT="$HOME/.phpenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 
@@ -32,3 +33,6 @@ source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting asdf)
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

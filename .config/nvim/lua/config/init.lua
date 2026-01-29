@@ -23,11 +23,19 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = evilGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
+
+autocmd("BufWritePre", {
+    pattern = "*.php",
+    callback = function()
+        vim.cmd("LspRestart laravel-ls")
+    end
+})
+
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
