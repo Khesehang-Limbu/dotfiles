@@ -1,13 +1,13 @@
-local parser_dir = vim.fn.stdpath("data") .. "/treesitter"
-vim.fn.mkdir(parser_dir, "p")
-vim.opt.runtimepath:append(parser_dir)
+--local parser_dir = vim.fn.stdpath("data") .. "/treesitter"
+--vim.fn.mkdir(parser_dir, "p")
+--vim.opt.runtimepath:append(parser_dir)
 
 
-require 'nvim-treesitter.configs'.setup {
-    parser_install_dir = parser_dir,
+require 'nvim-treesitter'.setup {
+    -- parser_install_dir = parser_dir,
 
     -- A list of parser names, or "all"
-    ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "php", "vim", "bash" },
+    ensure_installed = { "vimdoc", "javascript", "typescript", "c", "lua", "rust", "php", "vim", "bash", "html", "css", "python" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,

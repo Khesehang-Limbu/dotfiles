@@ -36,3 +36,4 @@ export NVM_DIR="$HOME/.nvm"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting asdf)
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
